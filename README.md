@@ -1,5 +1,7 @@
 # Brightdesk Forms
 
+![Brightdesk Forms](assets/brightdesk-forms-banner.svg)
+
 Create forms, surveys and quizzes, then collect responses locally.
 
 Brightdesk Forms is a focused desktop productivity tool within the Brightdesk Office Suite. This repository contains the source, quality checks and platform build configuration for the Forms desktop edition.
