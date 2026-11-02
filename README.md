@@ -1,6 +1,8 @@
 # Brightdesk Forms
 
-![Brightdesk Forms](assets/brightdesk-forms-banner.svg)
+![Brightdesk Forms social preview](assets/social-preview.svg)
+
+![Brightdesk Forms product artwork](assets/brightdesk-product.svg)
 
 Create forms, surveys and quizzes, then collect responses locally.
 
@@ -39,13 +41,15 @@ The build scripts target Windows, macOS and Linux:
 
 Verify a platform build with the matching `npm run verify:product:<platform>` command.
 
-Build output is written under `release/apps/forms`. Platform packaging should be performed on a compatible runner or operating system. CI includes scheduled quality checks; installer builds and publication are manual, and release publication is disabled by default.
+Build output is stored in the Forms product release directory. Platform packaging should be performed on a compatible runner or operating system.
 
 ## Quality and security
 
-`npm test` runs the checked-in test suite. The CI workflow also verifies the lockfile and third-party licence notices, runs release preflight checks, and audits npm dependencies.
+`npm test` runs the checked-in test suite. The CI workflow verifies the lockfile and third-party licence notices, runs release preflight checks, and audits npm dependencies. The same checks repeat daily through the scheduled workflow.
 
-Dependabot checks npm and GitHub Actions dependencies weekly.
+Dependabot checks npm packages and GitHub Actions weekly.
+
+Publishing a GitHub Release is a separate manual choice and remains disabled by default.
 
 ## Scope
 
