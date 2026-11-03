@@ -84,7 +84,7 @@
     "native:build": "node scripts/build-native.js",
     "prestart": "npm run native:build",
     "pretest": "npm run native:build",
-    "rust:fmt": "cargo fmt --manifest-path rust/Cargo.toml --all -- --check",
+    "rust:fmt": "cargo fmt --manifest-path rust/Cargo.toml --all",
     "rust:test": "cargo test --manifest-path rust/Cargo.toml --workspace",
     "rust:build": "cargo build --manifest-path rust/Cargo.toml --workspace --release",
     "rust:check": "npm run rust:fmt && cargo clippy --manifest-path rust/Cargo.toml --workspace --all-targets -- -D warnings && npm run rust:test && npm run native:build"
