@@ -1,3 +1,4 @@
+import { readFileSync } from "node:fs";
 import test from"node:test";import assert from"node:assert/strict";import{engineInfo,normalizeEmbedding,cosineSimilarity,rankEmbeddings,chunkSource,analyzeSource}from"../scripts/rust-engine.mjs";test("loads the native engine or a compatible JavaScript fallback",()=>{const i=engineInfo();assert.ok(i.native===true||i.fallback===true);assert.equal(typeof i.engine,"string");if(process.env.BRIGHTDESK_REQUIRE_NATIVE_ENGINE==="1"){assert.equal(i.native,true);assert.equal(i.nodeApiVersion,8);assert.ok(i.capabilities.includes("vector-ranking"));}});test("normalizes and validates vectors",()=>{assert.ok(Math.abs(normalizeEmbedding([3,4])[0]-0.6)<1e-10);assert.throws(()=>normalizeEmbedding([0,0]),/non-zero/i);});test("similarity and deterministic ranking",()=>{assert.equal(cosineSimilarity([1,0],[2,0]),1);assert.deepEqual(rankEmbeddings([1,0],[[0,1],[1,0],[2,0]]).map(x=>x.index),[1,2,0]);});test("unicode chunking and source stats",()=>{const s="🦀".repeat(100),c=chunkSource(s,128);assert.equal(c.join(""),s);assert.ok(c.every(x=>Buffer.byteLength(x)<=128));assert.equal(analyzeSource("one two\nthree").tokenCount,3);});
 
 import fallbackModule from "../src/rust-engine-fallback.js";
@@ -18,4 +19,14 @@ test("JavaScript fallback preserves Unicode chunk boundaries and limits", () => 
   assert.equal(chunks.join(""), source);
   assert.throws(() => fallback.normalizeEmbedding([0, 0]), /non-zero/i);
   assert.throws(() => fallback.chunkSource("text", 64), /between 128 and 16000/i);
+});
+
+
+const productBuilderConfig = readFileSync(
+  new URL("../electron-builder.app.config.js", import.meta.url),
+  "utf8"
+);
+test("desktop installer includes and unpacks the native Rust addon", () => {
+  assert.ok(productBuilderConfig.includes("'native/brightdesk_engine.node'"));
+  assert.ok(productBuilderConfig.includes("asarUnpack: ['native/brightdesk_engine.node']"));
 });
