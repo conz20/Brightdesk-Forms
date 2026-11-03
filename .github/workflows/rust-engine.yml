@@ -1,0 +1,28 @@
+name: Brightdesk Rust Node-API engine
+on:
+  push:
+    branches: [main, "feature/**"]
+    paths: ["rust/**", "native/**", "scripts/build-native.js", "src/rust-engine.js", "src/embedding-bridge.js", "tests/**", ".github/workflows/rust-engine.yml"]
+  pull_request:
+    paths: ["rust/**", "native/**", "scripts/build-native.js", "src/rust-engine.js", "src/embedding-bridge.js", "tests/**", ".github/workflows/rust-engine.yml"]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  native:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/setup-node@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          node-version: "24.22.2"
+      - run: rustup toolchain install 1.99.1 --profile minimal --component rustfmt --component clippy && rustup default 1.99.1
+      - run: cargo fmt --manifest-path rust/Cargo.toml --all -- --check
+      - run: cargo clippy --manifest-path rust/Cargo.toml --workspace --all-targets -- -D warnings
+      - run: cargo test --manifest-path rust/Cargo.toml --workspace
+      - run: npm run native:build
+      - run: node --test tests/rust-engine.test.mjs tests/embedding-bridge.test.js

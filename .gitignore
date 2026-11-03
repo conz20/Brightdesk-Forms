@@ -1,0 +1,3 @@
+# generated native artifacts
+/native/*.node
+/rust/target/
