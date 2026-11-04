@@ -65,3 +65,26 @@ Brightdesk Forms is one of the ten approved Brightdesk products. It remains focu
 ## Licence
 
 See [LICENSE](LICENSE), [TERMS_AND_CONDITIONS.txt](TERMS_AND_CONDITIONS.txt) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
+## Professional workspace examples and acceptance
+
+Forms should make the full form-building journey easy to understand: build, preview, validate and review responses. The main example should show a realistic feedback or registration form with a sensible question order and a separate preview state.
+
+### Example workflow
+
+1. Create a feedback form with a title and short description.
+2. Add required and optional questions using suitable answer types.
+3. Preview the form as a respondent would see it.
+4. Submit valid sample responses and test required-field validation.
+5. Review the collected responses in a clear results view.
+
+The editor should distinguish the form outline, selected question settings and respondent preview. Required fields, validation messages, save state and response counts must be clear. Do not imply online publishing or cloud collection where the release is local-first.
+
+Follow the shared [Brightdesk visual and interaction standard](https://github.com/connormolloy12/Brightdesk-suite/blob/main/docs/BRIGHTDESK_VISUAL_STANDARD.md).
+
+### Acceptance checks
+
+- Question creation, reordering, preview and validation work as shown.
+- Required/optional states and errors are accessible and understandable.
+- Response review matches the responses actually stored.
+- Examples distinguish local functionality from any future online service.
