@@ -18,6 +18,10 @@ Brightdesk Forms is a dedicated desktop application within the independent Brigh
 - Work with the shared Brightdesk file, language and dictionary services.
 - Use the same Brightdesk design language and desktop experience.
 
+## Shared Brightdesk design standard
+
+This product follows the [Brightdesk visual and interaction standard](https://github.com/connormolloy12/Brightdesk-suite/blob/main/docs/BRIGHTDESK_VISUAL_STANDARD.md) for branding, icon usage, layout, responsive behaviour and accessibility.
+
 ## Requirements
 
 - Node.js **24.22.2**
