@@ -1,0 +1,3 @@
+'use strict';
+const test=require('node:test');const assert=require('node:assert/strict');const fs=require('node:fs');const path=require('node:path');
+test('Brightdesk Forms bundles its product icon, brand mark and workspace preview',()=>{const root=path.join(__dirname,'..');for(const file of ['icons/forms.svg','mark.svg','previews/forms.svg'])assert.ok(fs.existsSync(path.join(root,'src','branding',file)));const html=fs.readFileSync(path.join(root,'src','index.html'),'utf8');assert.ok(html.includes('branding/icons/forms.svg'));});
