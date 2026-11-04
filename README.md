@@ -1,12 +1,15 @@
 # Brightdesk Forms
 
-![Brightdesk Forms social preview](assets/social-preview.svg)
+<p align="center"><img src="src/branding/mark.svg" alt="Brightdesk brand mark" width="82" height="82"><br><strong>brightdesk</strong></p>
+<p align="center"><img src="src/branding/icons/forms.svg" alt="Brightdesk Forms application icon" width="112" height="112"></p>
 
-![Brightdesk Forms product artwork](assets/brightdesk-product.svg)
+<p align="center"><strong>Create forms, surveys and quizzes, then collect responses locally.</strong></p>
 
-Create forms, surveys and quizzes, then collect responses locally.
+<p align="center"><img src="src/branding/previews/forms.svg" alt="Brightdesk Forms workspace design preview" width="100%"></p>
 
-Brightdesk Forms is a focused desktop productivity tool within the Brightdesk Office Suite. This repository contains the source, quality checks and platform build configuration for the Forms desktop edition.
+> **Visual example:** This is an original Brightdesk design preview showing the intended desktop workspace. It is an illustrative concept, not a screenshot of a completed release build.
+
+Brightdesk Forms is a dedicated desktop application within the independent Brightdesk Office Suite. It uses the shared Brightdesk design language and opens directly into Forms.
 
 ## What it does
 
