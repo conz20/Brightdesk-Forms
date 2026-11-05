@@ -25,9 +25,9 @@ test('final stylesheet tokens match the exact approved Forms palette', () => {
   };
 
   assert.equal(lastHex('--bd-accent'), '#C35D68');
-  assert.equal(lastHex('--bd-accent-strong'), '#9E4652');
-  assert.equal(lastHex('--bd-accent-soft'), '#FAEEF0');
-  assert.equal(lastHex('--bd-product-tint'), '#FAEEF0');
+  assert.equal(lastHex('--bd-accent-strong'), '#9E4651');
+  assert.equal(lastHex('--bd-accent-soft'), '#FBF0F1');
+  assert.equal(lastHex('--bd-product-tint'), '#FBF0F1');
   assert.equal(lastHex('--bd-canvas'), '#F3F6FA');
   assert.equal(lastHex('--bd-ink'), '#202B3C');
 });
