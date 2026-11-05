@@ -16,3 +16,18 @@ test('Forms follows the approved Brightdesk design contract',()=>{
  assert.ok(readme.includes('docs/BRIGHTDESK_DESIGN.md'));
  assert.ok(brief.includes('BRIGHTDESK_VISUAL_STANDARD.md')&&brief.includes('#C35D68'));
 });
+
+test('final stylesheet tokens match the exact approved Forms palette', () => {
+  const css = fs.readFileSync(path.join(root, 'src', 'design-system.css'), 'utf8');
+  const lastHex = (token) => {
+    const values = [...css.matchAll(new RegExp(token + String.raw`\s*:\s*(#[0-9a-f]{6})`, 'gi'))];
+    return values.at(-1)?.[1].toUpperCase();
+  };
+
+  assert.equal(lastHex('--bd-accent'), '#C35D68');
+  assert.equal(lastHex('--bd-accent-strong'), '#9E4652');
+  assert.equal(lastHex('--bd-accent-soft'), '#FAEEF0');
+  assert.equal(lastHex('--bd-product-tint'), '#FAEEF0');
+  assert.equal(lastHex('--bd-canvas'), '#F3F6FA');
+  assert.equal(lastHex('--bd-ink'), '#202B3C');
+});
