@@ -42,7 +42,7 @@ npm test
 
 ## Cross-platform desktop packages
 
-All supported desktop editions use the same approved Brightdesk interface and product scope. Each product keeps its approved icon and accent on Windows, macOS and Linux. Only operating-system integrations such as window chrome, native dialogs, keyboard conventions, permissions and packaging may vary.
+The approved cross-platform target is one Brightdesk interface and product scope on Windows, macOS and Linux. Each product must retain its approved icon and accent across those systems. Only operating-system integrations such as window chrome, native dialogs, keyboard conventions, permissions and packaging may vary.
 
 | Platform | Configured package target |
 | --- | --- |
