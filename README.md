@@ -9,16 +9,18 @@
 
 <p align="center"><sub>Select the preview to open the full-size artwork.</sub></p>
 
-> **Visual example:** This is an original Brightdesk design preview showing the intended desktop workspace. It is an illustrative concept, not a screenshot of a completed release build.
+> **Concept artwork — not a screenshot.** The preview above is original Brightdesk design artwork, not a capture from the running desktop build. A genuine screenshot will be added only after the current product window has been launched and its primary workflow checked.
 
 Brightdesk Forms is a dedicated desktop application within the independent Brightdesk Office Suite. It uses the shared Brightdesk design language and opens directly into Forms.
 
-## What it does
+## Current first-use workflows
 
-- Design and organise forms, surveys and quizzes.
-- Collect responses locally.
-- Work with the shared Brightdesk file, language and dictionary services.
-- Use the same Brightdesk design language and desktop experience.
+- Create and edit local form titles and descriptions.
+- Add, edit and remove short-answer, long-answer, single-choice, multiple-choice and date questions.
+- Mark questions as required and validate submitted answers.
+- Preview a form, submit responses on this device, review saved responses and delete individual responses.
+
+**Not included in this first version:** Online publishing, public response links, branching logic, scoring, file attachments, cloud response collection and collaboration.
 
 ## Shared Brightdesk design standard
 
