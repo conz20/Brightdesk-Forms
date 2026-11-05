@@ -22,6 +22,12 @@ Brightdesk Forms is a dedicated desktop application within the independent Brigh
 
 **Not included in this first version:** Online publishing, public response links, branching logic, scoring, file attachments, cloud response collection and collaboration.
 
+## Rust Node-API engine
+
+The desktop main process can load Brightdesk's Node-API 8 Rust engine for bounded text chunking, source analysis, embedding normalization, cosine similarity and deterministic vector ranking. Renderer access is restricted to validated `window.brightdesk` methods through the context-isolated preload. Ordinary development uses a compatible JavaScript fallback when the native module is unavailable; installer builds compile the native module before packaging.
+
+The engine does not generate semantic embeddings, call language models or upload form definitions or responses. Online collaboration and remote model services are separate capabilities and are not enabled by this engine.
+
 ## Shared Brightdesk design standard
 
 This product follows the [Brightdesk visual and interaction standard](https://github.com/connormolloy12/Brightdesk-suite/blob/main/docs/BRIGHTDESK_VISUAL_STANDARD.md) for branding, icon usage, layout, responsive behaviour and accessibility.
