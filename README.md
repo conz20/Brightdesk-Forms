@@ -69,3 +69,7 @@ Brightdesk Forms is one of the ten approved Brightdesk products. It remains focu
 ## Licence
 
 See [LICENSE](LICENSE), [TERMS_AND_CONDITIONS.txt](TERMS_AND_CONDITIONS.txt) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
+## Rust foundation
+
+This repository now includes an additive Rust core foundation in `rust/`, pinned to Rust 1.99.1. The first Rust layer defines a small, versioned host contract and is checked separately from the existing Node.js application tests. Brightdesk remains an Electron desktop application: no existing JavaScript feature, installer, npm dependency, lockfile or customer-facing version has been changed, and no Rust binary is shipped in this stage. The same integration standard will be used for the four future app repositories. The shared Rust library also implements and tests Unicode-aware character, word and line counting. This is real Rust source code, but it remains a separately tested core library until the native Electron/Node bridge is built and verified. See [the Rust integration standard](docs/RUST-INTEGRATION.md) and the [official Rust getting-started guide](https://rust-lang.org/learn/get-started/).
