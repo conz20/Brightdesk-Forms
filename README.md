@@ -97,3 +97,10 @@ The Windows, macOS and Linux installer matrix remains available through a manual
 ## Documentation freshness
 
 The root README is maintained alongside the product, not as an end-of-project task. Every pull request that changes application code, tests, UI, design assets, screenshots, icons, configuration, dependencies, packaging, or build/release workflows must also update this README in the same pull request. Keep feature status, screenshots and visual references, application icons, setup/build instructions, platform compatibility, and repository links aligned with the latest verified implementation. Describe planned or untested functionality as planned, never as completed. The **README freshness** GitHub Actions check requires a root `README.md` update whenever a pull request or direct push to `main` changes a non-Markdown file; a passing check confirms inclusion, while reviewers remain responsible for checking factual accuracy and current visuals.
+
+
+## Individual product window
+
+When opened by itself, Brightdesk Forms opens directly into its form workspace. The Suite's product-management sidebar and generic welcome banner are removed from this window. Form-building controls and the response views stay within the Forms work area, with the product identity and relevant actions at the top.
+
+The interface preview is design artwork showing the intended form-building arrangement; it is not a screenshot from a verified running build.
