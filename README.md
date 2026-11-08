@@ -110,6 +110,6 @@ The root README is maintained alongside the product, not as an end-of-project ta
 
 ## Individual product window
 
-When opened by itself, Brightdesk Forms opens directly into its form workspace. The Suite's product-management sidebar and generic welcome banner are removed from this window. Form-building controls and the response views stay within the Forms work area, with the product identity and relevant actions at the top.
+When opened by itself, Brightdesk Forms opens directly into its form workspace. The Suite's generic product-management view and welcome banner are removed from this window; the product's own left navigation remains available, with an optional compact icon rail and accessible labels. Form-building controls and the response views stay within the Forms work area, with the product identity and relevant actions at the top.
 
 The interface preview is design artwork showing the intended form-building arrangement; it is not a screenshot from a verified running build.
