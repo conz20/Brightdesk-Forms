@@ -13,6 +13,15 @@
 
 Brightdesk Forms is a dedicated desktop application within the independent Brightdesk Office Suite. It uses the shared Brightdesk design language and opens directly into Forms.
 
+
+<p align="center"><img src="https://raw.githubusercontent.com/connormolloy12/Brightdesk-Design-System/design/product-window-system-2026-11-08/assets/navigation-states.svg" alt="Brightdesk navigation reference showing the fixed labelled Suite sidebar and optional compact product navigation" width="100%"></p>
+
+## Product navigation
+
+The left navigation is 232 px wide when expanded. It can be collapsed to a slim 76 px icon rail and expanded again with the navigation control. In the compact state, the original SVG icons remain visible and each item keeps its full accessible name and tooltip. At 641–1007 px the rail starts compact to preserve workspace room. At 640 px and below it becomes a menu button that opens the navigation over the workspace; at 1008 px and above it starts expanded. This control exists in individual product windows only. The Suite keeps its fixed 192 px labelled sidebar and has no expand/collapse option.
+
+The interface preview remains design artwork, not a captured product screenshot. A real screenshot will be added only after the running desktop window has been launched and visually checked.
+
 ## Cross-platform consistency
 
 The Windows, macOS and Linux editions use the same approved Brightdesk interface and supported product scope. Shared layout, typography, spacing, component states and navigation follow the [Brightdesk visual and interaction standard](https://github.com/connormolloy12/Brightdesk-suite/blob/main/docs/BRIGHTDESK_VISUAL_STANDARD.md). This product's original icon and approved accent remain the same on every operating system. Only operating-system integrations such as window controls, native file dialogs, keyboard conventions and package formats may adapt to platform conventions.
@@ -97,3 +106,10 @@ The Windows, macOS and Linux installer matrix remains available through a manual
 ## Documentation freshness
 
 The root README is maintained alongside the product, not as an end-of-project task. Every pull request that changes application code, tests, UI, design assets, screenshots, icons, configuration, dependencies, packaging, or build/release workflows must also update this README in the same pull request. Keep feature status, screenshots and visual references, application icons, setup/build instructions, platform compatibility, and repository links aligned with the latest verified implementation. Describe planned or untested functionality as planned, never as completed. The **README freshness** GitHub Actions check requires a root `README.md` update whenever a pull request or direct push to `main` changes a non-Markdown file; a passing check confirms inclusion, while reviewers remain responsible for checking factual accuracy and current visuals.
+
+
+## Individual product window
+
+When opened by itself, Brightdesk Forms opens directly into its form workspace. The Suite's generic product-management view and welcome banner are removed from this window; the product's own left navigation remains available, with an optional compact icon rail and accessible labels. Form-building controls and the response views stay within the Forms work area, with the product identity and relevant actions at the top.
+
+The interface preview is design artwork showing the intended form-building arrangement; it is not a screenshot from a verified running build.
