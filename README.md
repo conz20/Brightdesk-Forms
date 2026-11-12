@@ -84,7 +84,7 @@ Build output is stored in the Forms product release directory. Platform packagin
 
 ## Quality and security
 
-`npm test` runs the checked-in test suite. The CI workflow verifies the lockfile and third-party licence notices, runs release preflight checks, and audits npm dependencies. The same checks repeat daily through the scheduled workflow.
+`npm test` runs the checked-in test suite. It includes the platform release-collector, Windows NSIS uninstaller-extraction and final visual-branding regression checks. Network-backed dictionary integration remains opt-in. The CI workflow verifies the lockfile and third-party licence notices, runs release preflight checks, and audits npm dependencies. The same checks repeat daily through the scheduled workflow.
 
 Dependabot checks npm packages and GitHub Actions weekly.
 
