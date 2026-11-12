@@ -40,7 +40,7 @@ These are configured build targets, not confirmation that a package has passed i
 
 ## Shared Brightdesk design standard
 
-This product follows the [Brightdesk visual and interaction standard](https://github.com/connormolloy12/Brightdesk-suite/blob/main/docs/BRIGHTDESK_VISUAL_STANDARD.md) for branding, icon usage, layout, responsive behaviour and accessibility.
+Follow the local [approved design brief](docs/BRIGHTDESK_DESIGN.md) and canonical [Brightdesk visual standard](https://github.com/connormolloy12/Brightdesk-suite/blob/main/docs/BRIGHTDESK_VISUAL_STANDARD.md). The approved Forms accent is `#C35D68`; preserve the shared navy/light shell and this product's original SVG identity.
 
 
 
@@ -68,20 +68,27 @@ npm start
 npm test
 ```
 
-## Desktop builds
+## Cross-platform desktop packages
 
-The build scripts target Windows, macOS and Linux:
+The approved cross-platform target is one Brightdesk interface and product scope on Windows, macOS and Linux. Each product must retain its approved icon and accent across those systems. Only operating-system integrations such as window chrome, native dialogs, keyboard conventions, permissions and packaging may vary.
 
-| Platform | Build command |
+| Platform | Configured package target |
 | --- | --- |
-| Windows | `npm run dist:product:win` |
-| macOS | `npm run dist:product:mac` |
-| Linux | `npm run dist:product:linux` |
+| Windows | x64 NSIS installer (.exe) |
+| macOS | Universal disk image (.dmg), package installer (.pkg) and archive (.zip) |
+| Linux | x64 AppImage (.AppImage) and Debian package (.deb) |
 
-Verify a platform build with the matching `npm run verify:product:<platform>` command.
+These are configured build targets, not confirmation that installers are published or have passed native verification. Build and verify each package on its target operating system before describing it as available. Release checks must cover installation, first launch, upgrade, launch after upgrade and removal. Removing Brightdesk must not silently delete local project data.
 
-Build output is stored in the Forms product release directory. Platform packaging should be performed on a compatible runner or operating system.
+The customer-facing release version and release approval are managed centrally by Brightdesk Office Suite. Publishing remains a separate manual action.
 
+Build and verify Forms on its matching target operating system:
+
+| Platform | Build command | Verification command |
+| --- | --- | --- |
+| Windows | `npm run dist:product:win` | `npm run verify:product:win` |
+| macOS | `npm run dist:product:mac` | `npm run verify:product:mac` |
+| Linux | `npm run dist:product:linux` | `npm run verify:product:linux` |
 ## Quality and security
 
 `npm test` runs the checked-in test suite. The CI workflow verifies the lockfile and third-party licence notices, runs release preflight checks, and audits npm dependencies. The same checks repeat daily through the scheduled workflow.
