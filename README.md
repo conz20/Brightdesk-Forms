@@ -118,3 +118,9 @@ Once installed, this product uses the internet only to check for, download and i
 ## Private CI runner
 
 Pull-request product tests and README checks run on Brightdesk's private macOS ARM64 runner. Routine pull-request verification does not use GitHub-hosted paid runners. Installer matrix builds and release publishing are separate manual workflow actions and are not run by pull-request checks.
+
+## Shared local JSON storage
+
+The shared-storage integration uses the Brightdesk-owned JSON helper from the private [Brightdesk-Common-Libs](https://github.com/conz20/Brightdesk-Common-Libs) repository. The exact source revision and Git blob are recorded in `src/vendor/brightdesk-common-libs/UPSTREAM.json`, and the product contract test checks the vendored bytes against that source.
+
+The helper is bundled locally and loaded before the renderer. It does not download code or access GitHub at runtime. Existing local document keys remain unchanged: `brightdesk-docs-v3`, the legacy `brightdesk-docs-v2` read fallback, and `brightdesk-app-setup-v1`. Reading legacy data does not remove or rewrite the legacy key; a later document save uses v3. Malformed stored JSON is surfaced for recovery rather than silently overwritten.
