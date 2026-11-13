@@ -58,3 +58,9 @@ test("macOS printer discovery helper is a universal Apple Silicon and Intel exec
  assert.equal(upstream.localPatches.windowsBuildScript.sourceCommit,"bb057ac192faa714e92deb218768506301d21367");
 
 });
+
+
+test("the default npm test command includes printing integration, adapter and IPC coverage",()=>{
+ const pkg=JSON.parse(read("package.json"));
+ for(const file of ["test/printing-integration.test.mjs","test/printing-adapter-virtual.test.mjs","test/printing-ipc.test.mjs"])assert.ok(pkg.scripts.test.includes(file),file);
+});
