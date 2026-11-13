@@ -4,6 +4,8 @@ Forms bundles the dependency-free Brightdesk Printing adapter snapshot from `con
 
 The Electron main process creates an adapter per `webContents` and registers sender-authorized IPC for configured queue listing, network discovery, user-selected WSD pairing, capabilities, system printer settings and print submission. The context-isolated preload exposes only the six printing operations.
 
+**Customer-facing UI boundary:** the renderer currently connects only queue listing, Print and Printer settings. Network discovery, user-approved WSD pairing and capability lookup are exposed through protected IPC/preload APIs but are not wired to a customer-facing screen. Users must add the printer through operating-system settings before it becomes a usable queue.
+
 Print submission uses Electron's visible operating-system print dialog. Brightdesk does not silently create queues, install drivers, pair printers or upload document contents.
 
 ## Platform integration
