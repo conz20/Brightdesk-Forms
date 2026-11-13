@@ -64,3 +64,21 @@ test("the default npm test command includes printing integration, adapter and IP
  const pkg=JSON.parse(read("package.json"));
  for(const file of ["test/printing-integration.test.mjs","test/printing-adapter-virtual.test.mjs","test/printing-ipc.test.mjs"])assert.ok(pkg.scripts.test.includes(file),file);
 });
+
+
+test("prepares a content-only print document for every Brightdesk product", () => {
+  const app = read("src/app.js");
+  const css = read("src/styles.css");
+  assert.match(app, /const PRINTABLE_APP_TARGETS/);
+  assert.match(app, /createBrightdeskPrintDocument/);
+  assert.match(app, /activeDoc\(\)\.slides/);
+  for (const appId of [
+    "pages", "sheets", "slides", "notes", "database",
+    "forms", "lists", "planner", "todo", "loop"
+  ]) {
+    assert.ok(app.includes(appId), `Missing print support for ${appId}`);
+  }
+  assert.match(app, /brightdesk-print-root/);
+  assert.match(css, /#brightdesk-print-root/);
+  assert.match(css, /data-app=["']slides["']/);
+});
