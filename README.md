@@ -129,4 +129,4 @@ The helper is loaded from the installed product before `src/app.js`. It does not
 
 ## Customer Help
 
-The desktop header includes a **Help** link. It opens the Brightdesk Forms customer guide in the customer's normal browser. The customer help website is not yet published, so this link is not ready for customer release. Brightdesk remains usable offline; no document or product data is sent when Help is opened.
+The left sidebar includes a discreet **Help** link near the bottom. It opens the Brightdesk Forms customer guide in the customer's normal browser. The customer help website is not yet published, so this link is not ready for customer release. Brightdesk remains usable offline; no document or product data is sent when Help is opened.
