@@ -113,7 +113,7 @@ The root README is maintained alongside the product, not as an end-of-project ta
 
 ## Customer network policy
 
-Once installed, this product uses the internet only to check for, download and install official Brightdesk updates. The product does not provide separate in-product installer downloads, customer accounts, passwords, profiles, subscriptions, cloud storage or online services. Normal product work remains local and available offline. Initial installer distribution takes place outside the running product. Spelling checks run locally. Already-installed, integrity-verified dictionaries remain available offline. Entries that are not included in this build are catalogue information only and cannot be downloaded in-product. Future dictionary pack discovery, download and updates must use verified official Brightdesk resources; automatic hybrid fallback and the complete pack catalogue are still pending for this product.
+Once installed, this product uses the internet for official Brightdesk updates. When a customer selects Help, it opens the official read-only Brightdesk Help website in the normal browser; no document or product data is sent, and the connection is not made until Help is selected. The product does not provide separate in-product installer downloads, customer accounts, passwords, profiles, subscriptions, cloud storage or online services. Normal product work remains local and available offline. Initial installer distribution takes place outside the running product. Spelling checks run locally. Already-installed, integrity-verified dictionaries remain available offline. Entries that are not included in this build are catalogue information only and cannot be downloaded in-product. Future dictionary pack discovery, download and updates must use verified official Brightdesk resources; automatic hybrid fallback and the complete pack catalogue are still pending for this product.
 
 ## Private CI runner
 
@@ -125,3 +125,9 @@ Pull-request product tests and README checks run on Brightdesk's private macOS A
 This product bundles the Brightdesk Common-Libs JSON storage helper locally at `src/vendor/brightdesk-common-libs/json-storage.js`. The renderer keeps the established `brightdesk-docs-v3` and `brightdesk-app-setup-v1` storage keys and reads the older `brightdesk-docs-v2` key as a fallback without deleting it. The exact upstream repository, source commit, path, API version and Git blob SHA are recorded in `src/vendor/brightdesk-common-libs/UPSTREAM.json`.
 
 The helper is loaded from the installed product before `src/app.js`. It does not load from GitHub, a package registry or another network service at runtime, so normal document storage remains on this device and works offline.
+
+
+## Customer Help
+
+The left sidebar includes a small, discreet **Help** link near the bottom. It opens the Brightdesk Forms guide at the reserved address `https://help.brightdesk.com/products/forms.html` in the customer's normal browser. The website is not live or verified yet, so this draft must not be released until the production address and all customer pages have been verified. The Wiki is updated independently: approved guide changes appear the next time a customer opens Help and do not require a Brightdesk installer update. Opening Help sends no document or product data.
+
