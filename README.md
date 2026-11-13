@@ -125,3 +125,8 @@ Pull-request product tests and README checks run on Brightdesk's private macOS A
 This product bundles the Brightdesk Common-Libs JSON storage helper locally at `src/vendor/brightdesk-common-libs/json-storage.js`. The renderer keeps the established `brightdesk-docs-v3` and `brightdesk-app-setup-v1` storage keys and reads the older `brightdesk-docs-v2` key as a fallback without deleting it. The exact upstream repository, source commit, path, API version and Git blob SHA are recorded in `src/vendor/brightdesk-common-libs/UPSTREAM.json`.
 
 The helper is loaded from the installed product before `src/app.js`. It does not load from GitHub, a package registry or another network service at runtime, so normal document storage remains on this device and works offline.
+
+
+## Customer Help
+
+The desktop header includes a **Help** link. It opens the Brightdesk Forms customer guide in the customer's normal browser. The customer help website is not yet published, so this link is not ready for customer release. Brightdesk remains usable offline; no document or product data is sent when Help is opened.
