@@ -125,3 +125,7 @@ Pull-request product tests and README checks run on Brightdesk's private macOS A
 This product bundles the Brightdesk Common-Libs JSON storage helper locally at `src/vendor/brightdesk-common-libs/json-storage.js`. The renderer keeps the established `brightdesk-docs-v3` and `brightdesk-app-setup-v1` storage keys and reads the older `brightdesk-docs-v2` key as a fallback without deleting it. The exact upstream repository, source commit, path, API version and Git blob SHA are recorded in `src/vendor/brightdesk-common-libs/UPSTREAM.json`.
 
 The helper is loaded from the installed product before `src/app.js`. It does not load from GitHub, a package registry or another network service at runtime, so normal document storage remains on this device and works offline.
+
+## Application identity
+
+The Electron main process validates the configured product ID against the shared ten-product catalogue exported by `src/standalone-downloads.js`. The startup import is covered by `tests/main-product-catalog.test.js`, which guards the approved product list so unsupported IDs cannot enter the product launch path.
