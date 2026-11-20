@@ -38,6 +38,10 @@ These are configured build targets, not confirmation that a package has passed i
 
 **Not included in this first version:** Online publishing, public response links, branching logic, scoring, file attachments, cloud response collection and collaboration.
 
+## Engineering and release standard
+
+This product follows the shared requirements for testing, languages, cross-platform installers, data preservation, customer-controlled updates and ongoing maintenance. See the [engineering and release standard](docs/ENGINEERING_AND_RELEASE_STANDARD.md).
+
 ## Shared Brightdesk design standard
 
 This product follows the [Brightdesk visual and interaction standard](https://github.com/connormolloy12/Brightdesk-suite/blob/main/docs/BRIGHTDESK_VISUAL_STANDARD.md) for branding, icon usage, layout, responsive behaviour and accessibility.
