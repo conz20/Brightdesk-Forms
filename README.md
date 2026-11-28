@@ -13,6 +13,8 @@
 
 Brightdesk Forms is a dedicated desktop application within the independent Brightdesk Office Suite. It uses the shared Brightdesk design language and opens directly into Forms.
 
+Development and CI use the exact Node.js 24.22.3 LTS runtime.
+
 ## Cross-platform consistency
 
 The Windows, macOS and Linux editions use the same approved Brightdesk interface and supported product scope. Shared layout, typography, spacing, component states and navigation follow the [Brightdesk visual and interaction standard](https://github.com/connormolloy12/Brightdesk-suite/blob/main/docs/BRIGHTDESK_VISUAL_STANDARD.md). This product's original icon and approved accent remain the same on every operating system. Only operating-system integrations such as window controls, native file dialogs, keyboard conventions and package formats may adapt to platform conventions.
@@ -56,7 +58,7 @@ The stylesheet is packaged with the desktop product and does not load from GitHu
 
 ## Requirements
 
-- Node.js **24.22.2**
+- Node.js **24.22.3**
 - npm
 - Git
 
